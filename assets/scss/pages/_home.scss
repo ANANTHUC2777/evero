@@ -21,11 +21,10 @@
 .slider {
   &Wrap {
     width: 100%;
-    max-width: 90%;
+    max-width: calc(100vw - 36px);
     margin-bottom: 1.8rem !important;
     box-sizing: border-box;
-    background-color: #6d2222;
-    height: 400px;
+    margin-right: -1.8rem;
     .slick-dots {
       bottom: 1.8rem;
     }
