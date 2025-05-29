@@ -6,7 +6,7 @@
 @use "pages/home" as *;
 main {
   margin-top: 8.1rem;
-  padding: 1.8rem;
+  padding: 1.8rem 0;
   background: $bg-white;
 }
 @include lgmedia(576px) {
