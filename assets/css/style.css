@@ -557,10 +557,11 @@ aside ul:nth-of-type(2) li:last-child {
 }
 .sliderWrap {
   width: 100%;
-  max-width: calc(100vw - 36px);
+  max-width: 90%;
   margin-bottom: 1.8rem !important;
   box-sizing: border-box;
-  margin-right: -1.8rem;
+  background-color: #6d2222;
+  height: 400px;
 }
 .sliderWrap .slick-dots {
   bottom: 1.8rem;

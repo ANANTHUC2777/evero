@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Slick Slide
 $(function () {
-  $(".sliderWrap").slick({
+  $(".sliderWraap").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: true,
