@@ -6,7 +6,7 @@
 @use "pages/home" as *;
 main {
   margin-top: 8.1rem;
-  padding: 1.8rem 0;
+  padding: 1.8rem;
   background: $bg-white;
 }
 @include lgmedia(576px) {
@@ -14,7 +14,6 @@ main {
     display: none;
   }
 }
-
 @include media(991px) {
   .content-wrap {
     width: calc(100% - 7.8rem);
@@ -77,13 +76,3 @@ main {
     }
   }
 }
-// @include respond-between(1400px, 1599px) {
-//   .nav-wrap,
-//   .add-recordWrap,
-//   .sliderWrap,
-//   .tableWrap {
-//     max-width: 134rem !important;
-//     margin-left: auto !important;
-//     margin-right: auto !important;
-//   }
-// }
