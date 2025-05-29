@@ -544,6 +544,8 @@ aside ul:nth-of-type(2) li:last-child {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.8rem;
+  margin-left: 1.8rem;
+  margin-right: 1.8rem;
 }
 .add-recordTxt {
   font-size: 1.6rem;
@@ -560,6 +562,8 @@ aside ul:nth-of-type(2) li:last-child {
   max-width: calc(100vw - 36px);
   margin-bottom: 1.8rem !important;
   box-sizing: border-box;
+  padding-left: 1.8rem;
+  padding-right: 1.8rem;
 }
 .sliderWrap .slick-dots {
   bottom: 1.8rem;
@@ -589,6 +593,8 @@ aside ul:nth-of-type(2) li:last-child {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   max-width: calc(100vw - 36px);
   box-sizing: border-box;
+  margin-left: 1.8rem;
+  margin-right: 1.8rem;
 }
 .tableWrap-tbl {
   overflow-x: auto;
