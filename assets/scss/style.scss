@@ -1,0 +1,89 @@
+@use "abstract/index" as *;
+@use "components/reset" as *;
+@use "components/button" as *;
+@use "layout/nav" as *;
+@use "layout/sidebar" as *;
+@use "pages/home" as *;
+main {
+  margin-top: 8.1rem;
+  padding: 1.8rem;
+  background: $bg-white;
+}
+@include lgmedia(576px) {
+  .sidebar-btn {
+    display: none;
+  }
+}
+
+@include media(991px) {
+  .content-wrap {
+    width: calc(100% - 7.8rem);
+    nav {
+      left: 7.8rem;
+      width: calc(100% - 11.4rem);
+    }
+    .nav-leftCol {
+      flex-grow: 1;
+    }
+  }
+  .content-wrap-md {
+    width: 100%;
+    .nav-leftCol {
+      flex-grow: 1;
+    }
+    nav {
+      left: 0rem;
+      width: calc(100% - 3.4rem);
+    }
+  }
+  .content-wrap-xs {
+    width: 100%;
+    nav {
+      left: 0;
+      width: calc(100% - 3.6rem);
+    }
+  }
+}
+@include media(767px) {
+  main{
+    margin-top: 14.1rem;
+  }
+}
+@include media(575px) {
+  main {
+    margin-top: 25.8rem;
+  }
+  .content-wrap-xs nav {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+  .sidebar-btn {
+    position: fixed;
+    z-index: 9;
+    top: 1.5%;
+    background: $blue;
+    padding: 0.6rem;
+    border-top: 0;
+    cursor: pointer;
+    left: 1rem;
+    a {
+      display: block;
+    }
+    i {
+      font-size: 2rem;
+      color: $white;
+    }
+  }
+}
+// @include respond-between(1400px, 1599px) {
+//   .nav-wrap,
+//   .add-recordWrap,
+//   .sliderWrap,
+//   .tableWrap {
+//     max-width: 134rem !important;
+//     margin-left: auto !important;
+//     margin-right: auto !important;
+//   }
+// }

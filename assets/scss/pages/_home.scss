@@ -1,0 +1,130 @@
+@use "../abstract/" as *;
+.add-record {
+  &Wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.8rem;
+  }
+  &Txt {
+    font-size: 1.6rem;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    i {
+      color: $orange;
+      font-size: 2.6rem;
+    }
+    p {
+    }
+  }
+}
+.slider {
+  &Wrap {
+    width: 100%;
+    max-width: calc(100vw - 36px);
+    margin-bottom: 1.8rem !important;
+    box-sizing: border-box;
+    .slick-dots {
+      bottom: 1.8rem;
+    }
+    .slick-dots li button {
+      width: 1.6rem;
+    }
+    .slick-dots li button:before {
+      font-size: 1.6rem;
+      color: rgba(255, 255, 255, 0.65);
+      opacity: 1;
+    }
+    .slick-dots li.slick-active button:before {
+      color: $orange;
+    }
+  }
+  &-item {
+    img {
+      width: 100%;
+      height: 40rem;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+  }
+}
+.table {
+  &Wrap {
+    background: $white;
+    padding: 2.4rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: calc(100vw - 36px);
+    box-sizing: border-box;
+    &-tbl {
+      overflow-x: auto;
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      thead {
+        tr {
+          border-bottom: 1px solid #eaeaea;
+        }
+      }
+      tbody {
+        tr:not(:last-child) {
+          border-bottom: 1px solid #eaeaea;
+        }
+      }
+      td,
+      th {
+        padding: 2rem;
+        text-align: left;
+        &:nth-child(1) {
+          width: 16rem;
+        }
+        &:nth-child(2) {
+          width: 88rem;
+        }
+        &:nth-child(3) {
+          width: 24rem;
+        }
+      }
+      th {
+        color: $gray;
+        font-size: 1.6rem;
+      }
+      td {
+        font-size: 1.4rem;
+        vertical-align: top;
+        line-height: 2.4rem;
+        color: $black;
+      }
+    }
+  }
+  &Txt {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1.6rem;
+    color: $orange;
+    font-family: $theme-font-medium;
+    margin-bottom: 1.8rem;
+  }
+}
+@include media(1199px) {
+  .add-recordTxt {
+    font-size: 1.4rem;
+  }
+  .add-recordTxt i {
+    font-size: 2.4rem;
+  }
+}
+@include media(991px) {
+  .add-recordWrap {
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+}
+@include media(767px) {
+  .tableWrap-tbl table {
+    width: 60rem;
+  }
+}

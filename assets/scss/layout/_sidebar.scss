@@ -1,0 +1,188 @@
+/********* SIDEBAR *********/
+@use "../abstract/" as *;
+aside {
+  background: $blue;
+  padding: 2rem 0;
+  height: calc(100% - 4rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  ul {
+    li {
+      padding: 1.2rem 2rem;
+      margin-bottom: 1.2rem;
+      a {
+        display: block;
+        color: $white;
+        font-size: 1.6rem;
+        i {
+          margin-right: 1rem;
+          font-size: 1.6rem;
+          &::before {
+            display: block;
+            width: 1.6rem;
+            height: 1.6rem;
+          }
+        }
+      }
+      &.active {
+        background: $active-color;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 0.3rem;
+          top: 0;
+          height: 4.4rem;
+          background: $orange;
+        }
+      }
+    }
+    &:first-child {
+      li:first-child {
+        padding-top: 0.8rem;
+        margin-bottom: 1.6rem;
+        a {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          img {
+            max-width: 2.8rem;
+          }
+          span {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-family: $theme-font-semibold;
+          }
+        }
+      }
+    }
+    &:last-child {
+      li {
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+.view-menu {
+  padding: 1.2rem 2rem !important;
+  margin-bottom: 1.2rem !important;
+  display: none;
+  i {
+    transition: transform 0.5s ease-in-out !important;
+  }
+}
+.sidebar-close {
+  position: absolute;
+  top: 3rem;
+  padding: 0.5rem 1.2rem;
+  color: #fff;
+  right: -4.5rem;
+  background: #ef3d3d;
+  transform: rotate(90deg);
+  font-size: 1.5rem;
+}
+aside ul:nth-of-type(2) li:last-child{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+@include lgmedia(575px) {
+  .sidebar-close {
+    display: none !important;
+  }
+}
+
+@include media(991px) {
+  .sidebar-wrap {
+    width: 7.8rem;
+    transition: width 1s ease-in-out, opacity 1s ease-in-out;
+    aside ul:first-child li:first-child {
+      padding-top: 0.3rem;
+      margin-bottom: 0;
+    }
+    aside ul li.active {
+      transition: width 1s ease-in-out;
+      width: 3.8rem;
+    }
+    aside ul li span {
+      visibility: hidden;
+      width: 0;
+      opacity: 0;
+      display: inline-block;
+      transition: opacity 1s ease-in-out, width 1.3s ease-in-out, visibility 0 linear 2.5s;
+    }
+    aside ul li a i {
+      margin-right: 0;
+      transition: margin 0.3s ease-in-out;
+    }
+    aside ul:first-child li:first-child a {
+      gap: 0;
+      justify-content: center;
+      transition: justify-content 0.3s ease-in-out, gap 0.3s ease-in-out;
+    }
+    aside ul li a {
+      text-align: center;
+      transition: text-align 0.3s ease-in-out;
+    }
+  }
+  .sidebar-md {
+    width: 22.4rem;
+    transition: width 0.8s ease-in-out;
+    aside ul li.active {
+      width: 18.3rem;
+    }
+    aside ul:first-child li:first-child {
+      padding-top: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    aside ul li span {
+      visibility: visible;
+      width: auto;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out, visibility 0s;
+    }
+
+    aside ul:first-child li:first-child a {
+      gap: 1rem;
+      justify-content: flex-start;
+    }
+    aside ul li a {
+      text-align: left;
+    }
+    aside ul li a i {
+      margin-right: 1rem;
+    }
+    .view-menu i {
+      transform: rotate(-180deg);
+    }
+  }
+  .side-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 0;
+    transition: all 1s ease-in-out;
+    z-index: 1;
+  }
+  .overlay--width {
+    width: 100vw;
+  }
+  .view-menu {
+    display: block;
+  }
+}
+@include media(575px) {
+  .sidebar-xs {
+    width: 0;
+    opacity: 0;
+  }
+  .overlay--width--xs {
+    width: 100vw;
+  }
+}
